@@ -1,0 +1,379 @@
+# Reading pref.tcl
+# do BoothMultiplier_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/Jayes/Desktop/PoLo/BoothMultiplier/BoothMultiplier.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:40:23 on Jan 10,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/Jayes/Desktop/PoLo/BoothMultiplier/BoothMultiplier.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity BoothMultiplier
+# -- Compiling architecture booth of BoothMultiplier
+# End time: 18:40:23 on Jan 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {C:/Users/Jayes/Desktop/PoLo/BoothMultiplier/TestBench_BoothMultiplier.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:40:23 on Jan 10,2024
+# vcom -reportprogress 300 -93 -work work C:/Users/Jayes/Desktop/PoLo/BoothMultiplier/TestBench_BoothMultiplier.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TestBench_BoothMultiplier
+# -- Compiling architecture tb of TestBench_BoothMultiplier
+# End time: 18:40:23 on Jan 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneive -L rtl_work -L work -voptargs="+acc"  TestBench_BoothMultiplier
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneive -L rtl_work -L work -voptargs=""+acc"" TestBench_BoothMultiplier 
+# Start time: 18:40:24 on Jan 10,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.testbench_boothmultiplier(tb)
+# Loading work.boothmultiplier(booth)
+# 
+# add wave *
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Jayes  Hostname: KANT  ProcessID: 26044
+#           Attempting to use alternate WLF file "./wlft4a1k35".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft4a1k35
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbench_boothmultiplier/UUT
+# ** Note: qo = '0'
+#    Time: 25 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(0) = '1'
+#    Time: 25 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(1) = '1'
+#    Time: 25 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(2) = '0'
+#    Time: 25 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(3) = '0'
+#    Time: 25 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(0) = '0'
+#    Time: 25 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(1) = '0'
+#    Time: 25 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(2) = '0'
+#    Time: 25 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(3) = '0'
+#    Time: 25 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: tmp(0) = '0'
+#    Time: 25 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: tmp(1) = '1'
+#    Time: 25 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: sub
+#    Time: 25 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: qo = '0'
+#    Time: 35 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(0) = '1'
+#    Time: 35 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(1) = '1'
+#    Time: 35 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(2) = '0'
+#    Time: 35 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(3) = '0'
+#    Time: 35 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(0) = '1'
+#    Time: 35 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(1) = '0'
+#    Time: 35 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(2) = '1'
+#    Time: 35 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(3) = '1'
+#    Time: 35 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: tmp(0) = '0'
+#    Time: 35 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: tmp(1) = '0'
+#    Time: 35 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: shr
+#    Time: 35 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: dec
+#    Time: 35 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: qo = '1'
+#    Time: 45 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(0) = '1'
+#    Time: 45 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(1) = '0'
+#    Time: 45 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(2) = '0'
+#    Time: 45 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(3) = '1'
+#    Time: 45 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(0) = '0'
+#    Time: 45 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(1) = '1'
+#    Time: 45 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(2) = '1'
+#    Time: 45 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(3) = '1'
+#    Time: 45 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: tmp(0) = '1'
+#    Time: 45 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: tmp(1) = '1'
+#    Time: 45 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: shr
+#    Time: 45 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: dec
+#    Time: 45 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: qo = '1'
+#    Time: 55 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(0) = '0'
+#    Time: 55 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(1) = '0'
+#    Time: 55 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(2) = '1'
+#    Time: 55 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(3) = '0'
+#    Time: 55 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(0) = '1'
+#    Time: 55 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(1) = '1'
+#    Time: 55 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(2) = '1'
+#    Time: 55 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(3) = '1'
+#    Time: 55 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: tmp(0) = '1'
+#    Time: 55 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: tmp(1) = '0'
+#    Time: 55 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: add
+#    Time: 55 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: qo = '1'
+#    Time: 65 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(0) = '0'
+#    Time: 65 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(1) = '0'
+#    Time: 65 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(2) = '1'
+#    Time: 65 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(3) = '0'
+#    Time: 65 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(0) = '0'
+#    Time: 65 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(1) = '1'
+#    Time: 65 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(2) = '0'
+#    Time: 65 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(3) = '0'
+#    Time: 65 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: tmp(0) = '0'
+#    Time: 65 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: tmp(1) = '0'
+#    Time: 65 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: shr
+#    Time: 65 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: dec
+#    Time: 65 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: qo = '0'
+#    Time: 75 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(0) = '0'
+#    Time: 75 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(1) = '1'
+#    Time: 75 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(2) = '0'
+#    Time: 75 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(3) = '0'
+#    Time: 75 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(0) = '1'
+#    Time: 75 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(1) = '0'
+#    Time: 75 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(2) = '0'
+#    Time: 75 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(3) = '0'
+#    Time: 75 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: tmp(0) = '0'
+#    Time: 75 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: tmp(1) = '0'
+#    Time: 75 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: shr
+#    Time: 75 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: dec
+#    Time: 75 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Error: Test failed: Product does not match expected value
+#    Time: 110 ns  Iteration: 0  Instance: /testbench_boothmultiplier
+add wave -position end  sim:/testbench_boothmultiplier/UUT/cnt
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /testbench_boothmultiplier/UUT
+run
+# ** Note: qo = '0'
+#    Time: 25 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(0) = '1'
+#    Time: 25 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(1) = '1'
+#    Time: 25 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(2) = '0'
+#    Time: 25 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(3) = '0'
+#    Time: 25 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(0) = '0'
+#    Time: 25 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(1) = '0'
+#    Time: 25 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(2) = '0'
+#    Time: 25 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(3) = '0'
+#    Time: 25 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: tmp(0) = '0'
+#    Time: 25 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: tmp(1) = '1'
+#    Time: 25 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: sub
+#    Time: 25 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: qo = '0'
+#    Time: 35 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(0) = '1'
+#    Time: 35 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(1) = '1'
+#    Time: 35 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(2) = '0'
+#    Time: 35 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(3) = '0'
+#    Time: 35 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(0) = '1'
+#    Time: 35 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(1) = '0'
+#    Time: 35 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(2) = '1'
+#    Time: 35 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(3) = '1'
+#    Time: 35 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: tmp(0) = '0'
+#    Time: 35 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: tmp(1) = '0'
+#    Time: 35 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: shr
+#    Time: 35 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: dec
+#    Time: 35 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: qo = '1'
+#    Time: 45 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(0) = '1'
+#    Time: 45 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(1) = '0'
+#    Time: 45 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(2) = '0'
+#    Time: 45 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(3) = '1'
+#    Time: 45 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(0) = '0'
+#    Time: 45 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(1) = '1'
+#    Time: 45 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(2) = '1'
+#    Time: 45 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(3) = '1'
+#    Time: 45 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: tmp(0) = '1'
+#    Time: 45 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: tmp(1) = '1'
+#    Time: 45 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: shr
+#    Time: 45 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: dec
+#    Time: 45 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: qo = '1'
+#    Time: 55 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(0) = '0'
+#    Time: 55 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(1) = '0'
+#    Time: 55 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(2) = '1'
+#    Time: 55 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(3) = '0'
+#    Time: 55 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(0) = '1'
+#    Time: 55 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(1) = '1'
+#    Time: 55 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(2) = '1'
+#    Time: 55 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(3) = '1'
+#    Time: 55 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: tmp(0) = '1'
+#    Time: 55 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: tmp(1) = '0'
+#    Time: 55 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: add
+#    Time: 55 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: qo = '1'
+#    Time: 65 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(0) = '0'
+#    Time: 65 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(1) = '0'
+#    Time: 65 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(2) = '1'
+#    Time: 65 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(3) = '0'
+#    Time: 65 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(0) = '0'
+#    Time: 65 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(1) = '1'
+#    Time: 65 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(2) = '0'
+#    Time: 65 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(3) = '0'
+#    Time: 65 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: tmp(0) = '0'
+#    Time: 65 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: tmp(1) = '0'
+#    Time: 65 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: shr
+#    Time: 65 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: dec
+#    Time: 65 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: qo = '0'
+#    Time: 75 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(0) = '0'
+#    Time: 75 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(1) = '1'
+#    Time: 75 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(2) = '0'
+#    Time: 75 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: Q(3) = '0'
+#    Time: 75 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(0) = '1'
+#    Time: 75 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(1) = '0'
+#    Time: 75 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(2) = '0'
+#    Time: 75 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: A(3) = '0'
+#    Time: 75 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: tmp(0) = '0'
+#    Time: 75 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: tmp(1) = '0'
+#    Time: 75 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: shr
+#    Time: 75 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# ** Note: dec
+#    Time: 75 ns  Iteration: 1  Instance: /testbench_boothmultiplier/UUT
+# End time: 19:16:11 on Jan 10,2024, Elapsed time: 0:35:47
+# Errors: 0, Warnings: 1

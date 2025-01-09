@@ -1,0 +1,87 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity BoothMultiplier is
+    Port (
+        clk : in STD_LOGIC;
+        rst : in STD_LOGIC;
+        start : in STD_LOGIC;
+        operand_a : in STD_LOGIC_VECTOR(3 downto 0);
+        operand_b : in STD_LOGIC_VECTOR(3 downto 0);
+        result : out STD_LOGIC_VECTOR(7 downto 0);
+        done : out STD_LOGIC
+    );
+end BoothMultiplier;
+
+architecture Behavioral of BoothMultiplier is
+    signal multiplicand : STD_LOGIC_VECTOR(3 downto 0);
+    signal multiplier : STD_LOGIC_VECTOR(3 downto 0);
+    signal product : STD_LOGIC_VECTOR(7 downto 0);
+    signal partial_product : STD_LOGIC_VECTOR(7 downto 0);
+    signal counter : integer := 0;
+    signal state : integer := 0;
+
+    -- Define states for the Booth algorithm
+    constant IDLE : integer := 0;
+    constant SHIFT : integer := 1;
+    constant ADD_SUB : integer := 2;
+
+begin
+
+    process(clk, rst)
+    begin
+        if rst = '1' then
+            -- Reset signals
+            counter <= 0;
+            state <= IDLE;
+            multiplicand <= (others => '0');
+            multiplier <= (others => '0');
+            product <= (others => '0');
+            partial_product <= (others => '0');
+        elsif rising_edge(clk) then
+            -- Booth Algorithm
+            case state is
+                when IDLE =>
+                    if start = '1' then
+                        multiplicand <= operand_a;
+                        multiplier <= operand_b;
+                        counter <= 0;
+                        state <= SHIFT;
+                    end if;
+
+                when SHIFT =>
+                    if counter < 4 then
+                        -- Shift right
+                        partial_product <= ('0' & multiplicand(3 downto 1));
+                        multiplicand <= '0' & multiplicand(3 downto 1) & '0';
+                        counter <= counter + 1;
+                        state <= ADD_SUB;
+                    else
+                        state <= IDLE;
+                        product <= partial_product;
+                        done <= '1';
+                    end if;
+
+                when ADD_SUB =>
+                    -- Add or subtract based on the LSB of the multiplier
+                    if multiplier(0) = '1' then
+                        partial_product <= std_logic_vector(signed(partial_product) - signed(multiplicand));
+                    else
+                        partial_product <= std_logic_vector(signed(partial_product) + signed(multiplicand));
+                    end if;
+
+                    -- Shift right
+                    partial_product <= ('0' & partial_product(7 downto 1));
+                    counter <= counter + 1;
+                    state <= SHIFT;
+
+            end case;
+        end if;
+    end process;
+
+    -- Output the result
+    result <= product;
+
+end Behavioral;

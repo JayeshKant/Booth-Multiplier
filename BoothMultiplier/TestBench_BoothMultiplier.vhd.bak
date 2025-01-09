@@ -1,0 +1,71 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity TestBench_BoothMultiplier is
+end entity;
+
+architecture tb of TestBench_BoothMultiplier is
+    constant CLK_PERIOD : time := 10 ns; -- Clock period
+    signal clock, reset : std_logic := '0';
+    signal multiplicand, multiplier, product : signed(4 downto 1) := (others => '0');
+    signal valid : std_logic;
+
+    component BoothMultiplier
+        port (
+            clock        : in  std_logic;
+            reset        : in  std_logic;
+            multiplicand : in  signed(4 downto 1);
+            multiplier   : in  signed(4 downto 1);
+            product      : out signed(8 downto 1);
+            valid        : out std_logic
+        );
+    end component;
+
+begin
+    -- Instantiate the BoothMultiplier
+    UUT : BoothMultiplier
+        port map (
+            clock        => clock,
+            reset        => reset,
+            multiplicand => multiplicand,
+            multiplier   => multiplier,
+            product      => product,
+            valid        => valid
+        );
+
+    -- Clock process
+    process
+    begin
+        while now < 100 ns loop
+            clock <= '0';
+            wait for CLK_PERIOD / 2;
+            clock <= '1';
+            wait for CLK_PERIOD / 2;
+        end loop;
+        wait;
+    end process;
+
+    -- Stimulus process
+    process
+    begin
+        -- Initialize inputs
+        reset <= '1';
+        wait for CLK_PERIOD;
+
+        reset <= '0';
+        multiplicand <= "0101";  -- Example multiplicand
+        multiplier   <= "0011";  -- Example multiplier
+
+        wait for CLK_PERIOD * 10; -- Allow for some clock cycles
+
+        assert product = multiplicand * multiplier
+            report "Test failed: Product does not match expected value"
+            severity error;
+
+        wait;
+    end process;
+
+end tb;
+
+

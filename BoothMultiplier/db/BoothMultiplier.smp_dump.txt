@@ -1,0 +1,7 @@
+
+State Machine - |BoothMultiplier|state
+Name state.done state.shift state.addsub state.idle 
+state.idle 0 0 0 0 
+state.addsub 0 0 1 1 
+state.shift 0 1 0 1 
+state.done 1 0 0 1 
